@@ -6,7 +6,6 @@ Created on Sun Dec 29 15:07:38 2019
 """
 from os import X_OK
 import dash
-import dash_auth
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output,State, MATCH, ALL
