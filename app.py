@@ -4,7 +4,7 @@ Created on Sun Dec 29 15:07:38 2019
 
 @author: Azemar David
 """
-
+from os import X_OK
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -14,8 +14,10 @@ import dash_table
 from dash.exceptions import PreventUpdate
 from dash_table import DataTable
 from pandas.io.parquet import to_parquet
+from sqlalchemy import create_engine
 import dash_daq as daq
-
+#from dash_extensions import Download
+#from dash_extensions.snippets import send_data_frame
 import dash_admin_components as dac
 import dash_table.FormatTemplate as FormatTemplate
 from dash_table.Format import Format, Scheme, Sign, Symbol
@@ -32,6 +34,7 @@ import time
 from datetime import datetime
 from datetime import timedelta, date
 
+
 from waitress import serve
 from dash_extensions import Download
 from dash_extensions.snippets import send_data_frame
@@ -40,7 +43,7 @@ from dash_extensions.snippets import send_data_frame
 # =============================================================================
 
 them = 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
-app = dash.Dash(__name__,meta_tags=[{"name": "viewport", "content": "width=device-width"}],external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__,meta_tags=[{"name": "viewport", "content": "width=device-width"}])
 app.config.suppress_callback_exceptions = True
 server = app.server
 
@@ -215,8 +218,7 @@ body =  dac.Body(
 app.title = "Healthy App"
 app.layout = dac.Page(id="body_id",children=[navbar, sidebar, body, footer])
 
-app.title = "Healthy App"
-# app.layout = body
+
 
 
 
