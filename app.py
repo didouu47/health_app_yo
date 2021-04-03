@@ -4,7 +4,7 @@ Created on Sun Dec 29 15:07:38 2019
 
 @author: Azemar David
 """
-from os import X_OK
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -14,10 +14,8 @@ import dash_table
 from dash.exceptions import PreventUpdate
 from dash_table import DataTable
 from pandas.io.parquet import to_parquet
-from sqlalchemy import create_engine
 import dash_daq as daq
-#from dash_extensions import Download
-#from dash_extensions.snippets import send_data_frame
+
 import dash_admin_components as dac
 import dash_table.FormatTemplate as FormatTemplate
 from dash_table.Format import Format, Scheme, Sign, Symbol
@@ -33,13 +31,6 @@ from pandas.io.json import json_normalize
 import time
 from datetime import datetime
 from datetime import timedelta, date
-
-
-import plotly.graph_objects as go
-import plotly.figure_factory as ff
-import plotly.express as px
-from plotly.subplots import make_subplots
-from collections import OrderedDict
 
 from waitress import serve
 from dash_extensions import Download
