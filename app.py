@@ -42,7 +42,7 @@ from dash_extensions.snippets import send_data_frame
 # Dash App and Flask Server
 # =============================================================================
 
-them = 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
+
 app = dash.Dash(__name__,meta_tags=[{"name": "viewport", "content": "width=device-width"}])
 app.config.suppress_callback_exceptions = True
 server = app.server
@@ -208,14 +208,10 @@ body =  dac.Body(
             # cards_store,
             # cards_stock_holding,
             # cards_min_max,
-        dac.TabItem(html.P('Gallery 1 (You can add Dash Bootstrap Components!)'), 
-                    id='content_gallery_1'),
-        dac.TabItem(html.P('Gallery 2 (You can add Dash Bootstrap Components!)'), 
-                    id='content_gallery_2'),
         ])
         )
 
-app.title = "Healthy App"
+
 app.layout = dac.Page(id="body_id",children=[navbar, sidebar, body, footer])
 
 
