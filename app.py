@@ -228,6 +228,6 @@ app.layout = dac.Page(id="body_id",children=[navbar, sidebar, body, footer])
 
 if __name__ == '__main__':
     #app.run_server(debug=False)#,host='10.200.13.38',port='5000')
-    app.run_server(debug=True)#,host='10.200.13.38',port='8051')
+    app.run_server(debug=False)#,host='10.200.13.38',port='8051')
     # app.run_server(debug=False)
     # serve(app, host='0.0.0.0', port=8000)   
